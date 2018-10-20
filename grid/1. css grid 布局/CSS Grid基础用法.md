@@ -333,12 +333,176 @@ css grid： 是第一个专门用于解决布局问题的css模块。
 注意：该属性的`grid-`前缀将被自动删除，`grid-column-gap`被命名为`gap`。Chrome 68+，Safari 11.2 Release 50+ 和 Opera 54+ 已经支持该属性不加前缀。
 
 #### justify-items
+基于行/横轴来对齐网格项（与[align-items](#align-items)基于列/纵轴对齐相反）。该值适用于容器内所有的网格项。
+
+可选值：
+- `start`: - 对齐所有单元格内元素的起始边缘
+- `ebd`: - 对齐所有单元格内元素的结束边缘
+- `center`: - 居中对齐所有单元格的元素
+- `stretch` - 填充单元格的总的总宽度（默认值）
+
+```` css
+.container {
+  justify-items: start | end | center | stretch;
+}
+````
+
+例子：
+```` css
+.container {
+  justify-items: start;
+}
+````
+![grid-justify-items-start](./images/grid-justify-items-start.png)
+
+```` css
+.container{
+  justify-items: end;
+}
+````
+![grid-justify-items-end](./images/grid-justify-items-end.png)
+
+
+```` css
+.container{
+  justify-items: center;
+}
+````
+![grid-justify-items-center](./images/grid-justify-items-center.png)
+
+```` css
+.container{
+  justify-items: stretch;
+}
+````
+![grid-justify-items-stretch](./images/grid-justify-items-stretch.png)
+
+该行为也可以通过[justify-self](#justify-self)属性设置在每个独立的网格项上
 
 #### align-items
+基于列/纵轴来对齐网格项（与[justify-items](#justify-items)基于/横轴对齐相反）。该值适用于容器内所有的网格项。
+
+可选值：
+- `start`: - 对齐所有单元格内元素的起始边缘
+- `ebd`: - 对齐所有单元格内元素的结束边缘
+- `center`: - 居中对齐所有单元格的元素
+- `stretch` - 填充单元格的总的总宽度（默认值）
+
+```` css
+.container {
+  align-items: start | end | center | stretch;
+}
+````
+
+例子：
+```` css
+.container {
+  align-items: start;
+}
+````
+![grid-align-items-start](./images/grid-align-items-start.png)
+
+```` css
+.container{
+  align-items: end;
+}
+````
+![grid-align-items-end](./images/grid-align-items-end.png)
+
+
+```` css
+.container{
+  align-items: center;
+}
+````
+![grid-align-items-center](./images/grid-align-items-center.png)
+
+```` css
+.container{
+  align-items: stretch;
+}
+````
+![grid-align-items-stretch](./images/grid-align-items-stretch.png)
+
+该行为也可以通过[align-self](#align-self)属性设置在每个独立的网格项上
 
 #### place-items
+`place-items` 可在同时设置 `align-items` 和 `justify-items` 属性。
+
+可选值：
+ - `<align-items> / <justify-items>`: - 第一个值设置 `align-items`的值，第二个值设置设置 `justify-item` 的值。如果第二个值省略了，那么第一个值将同时被分配给这两个属性。
+
+ 所有的主流浏览器除了微软的Edge外都支持 **place-items** 的缩写。想要了解更多，请参考[align-items](#align-items)和[justify-items](#justify-items)
 
 #### justify-content
+有时候你设置的网格的大小可能比网格容器要小。这种场景可能发生在非弹性布局单位`px`上。在这种情况下，你可以设置网格在网格容器内的对齐方式。该属性基于行/横轴来对齐网格（与[align-content](#align-content)基于/横轴线对齐网格相反）。
+
+可选值：
+
+- `start` -
+- `end` -
+- `center` -
+- `stretch ` -
+- `space-around` -
+- `space-between` -
+- `space-evenly` -
+
+```` css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+}
+````
+
+例子：
+```` css
+.container {
+  justify-content: start;
+}
+````
+![grid-justify-content-start](./images/grid-justify-content-start.png)
+
+```` css
+.container {
+  justify-content: end;
+}
+````
+![grid-justify-content-end](./images/grid-justify-content-end.png)
+
+```` css
+.container {
+  justify-content: center;
+}
+````
+![grid-justify-content-center](./images/grid-justify-content-center.png)
+
+```` css
+.container {
+  justify-content: stretch;
+}
+````
+![grid-justify-content-stretch](./images/grid-justify-content-stretch.png)
+
+```` css
+.container {
+  justify-content: space-around;
+}
+````
+![grid-justify-content-space-around](./images/grid-justify-content-space-around.png)
+
+```` css
+.container {
+  justify-content: space-between;
+}
+````
+![grid-justify-content-space-between](./images/grid-justify-content-space-between.png)
+
+```` css
+.container {
+  justify-content: space-evenly;
+}
+````
+![grid-justify-content-space-evenly](./images/grid-justify-content-space-evenly.png)
+
 
 #### align-content
 
